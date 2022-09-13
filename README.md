@@ -1,3 +1,7 @@
+Dieses Repository ist kopiert von https://github.com/meetecho/janus-gateway
+Die einzigen wichtigen Änderungen befinden sich in dem Ordner html in der Datei janus.js
+Dort habe ich geändet, dass das PeerConnectionn-Objekt im Browser zugreifbar ist, sodass man während des Tests die WebRTCStats abfragen kann.
+
 Janus WebRTC Server
 ===================
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](COPYING)
