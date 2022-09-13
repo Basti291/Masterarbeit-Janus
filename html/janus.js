@@ -1831,6 +1831,8 @@ function Janus(gatewayCallbacks) {
 			Janus.log("Creating PeerConnection");
 			Janus.debug(pc_constraints);
 			config.pc = new RTCPeerConnection(pc_config, pc_constraints);
+
+			var statIntervall = window.setInterval(getConnectionStats, 1000,config.pc);
 			Janus.debug(config.pc);
 			if(config.pc.getStats) {	// FIXME
 				config.volume = {};
@@ -2096,6 +2098,10 @@ function Janus(gatewayCallbacks) {
 					createAnswer(handleId, media, callbacks);
 				}, callbacks.error);
 		}
+	}
+
+	function getConnectionStats(pc) {
+		window.pc = pc;
 	}
 
 	function prepareWebrtc(handleId, offer, callbacks) {
